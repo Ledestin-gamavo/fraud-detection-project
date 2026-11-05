@@ -1,0 +1,28 @@
+# Manipulation de données
+numpy>=1.26
+pandas>=2.1
+pyarrow>=14.0
+
+# Machine Learning
+scikit-learn>=1.4
+imbalanced-learn>=0.12
+xgboost>=2.0
+joblib>=1.3
+
+# Interprétabilité
+shap>=0.45
+
+# Visualisation
+matplotlib>=3.8
+seaborn>=0.13
+
+# Notebooks
+jupyterlab>=4.0
+ipykernel>=6.29
+nbformat>=5.9
+
+# Notebooks 01 et 02 (partie Data Analytics déjà réalisée)
+scipy>=1.11
+missingno>=0.5
+plotly>=5.18
+factor-analyzer>=0.5

@@ -1,0 +1,5 @@
+{
+  "nom": "XGBoost",
+  "fichier_modele": "models/xgboost.joblib",
+  "seuil_optimal": 0.5780964493751526
+}

@@ -15,8 +15,8 @@ Les fichiers bruts ne sont pas versionnés : à placer dans `data/raw/`.
 ```
 ML_Project/
 ├── data/
-│   ├── raw/                      # train_transaction.csv, train_identity.csv (non versionnés)
-│   └── processed/                # df_prepared.parquet (entrée), train/val/test.parquet (sorties du notebook 03)
+│   ├── raw/                      
+│   └── processed/         
 ├── notebooks/
 │   ├── 01_Comprehension_Preparation.ipynb   # Chapitres 1-3 (déjà réalisé)
 │   ├── 02_EDA_Statistiques_ACP.ipynb        # Chapitre 4 (déjà réalisé)

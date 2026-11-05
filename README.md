@@ -18,23 +18,23 @@ ML_Project/
 │   ├── raw/                      
 │   └── processed/         
 ├── notebooks/
-│   ├── 01_Comprehension_Preparation.ipynb   # Chapitres 1-3 (déjà réalisé)
-│   ├── 02_EDA_Statistiques_ACP.ipynb        # Chapitre 4 (déjà réalisé)
-│   ├── 03_Preparation_ML.ipynb              # Chapitre 7 : variables, split 70/15/15, déséquilibre
-│   ├── 04_Model_Evaluation.ipynb            # Chapitre 9 : évaluation comparative et choix du modèle
-│   └── 05_Model_Interpretability.ipynb      # Chapitre 10 : SHAP sur le modèle retenu
+│   ├── 01_Comprehension_Preparation.ipynb   
+│   ├── 02_EDA_Statistiques_ACP.ipynb       
+│   ├── 03_Preparation_ML.ipynb              
+│   ├── 04_Model_Evaluation.ipynb           
+│   └── 05_Model_Interpretability.ipynb    
 ├── scripts/
-│   ├── train_logistic.py         # Chapitre 8 : Modèle 1
-│   ├── train_random_forest.py    # Chapitre 8 : Modèle 2
-│   └── train_xgboost.py          # Chapitre 8 : Modèle 3
-├── models/                       # modèles .joblib et liste des variables (features.json)
+│   ├── train_logistic.py        
+│   ├── train_random_forest.py    
+│   └── train_xgboost.py        
+├── models/                      
 ├── outputs/
-│   ├── *_metrics.json            # métriques de chaque modèle (train / validation / test)
-│   ├── predictions/              # probabilités de prédiction de chaque modèle
-│   ├── figures/                  # graphiques exportés pour le rapport
-│   ├── best_model.json           # modèle retenu et seuil de décision
-│   └── *.csv                     # tableaux comparatifs
-├── reports/                      # rapport du mémoire et slides
+│   ├── *_metrics.json            
+│   ├── predictions/             
+│   ├── figures/                  
+│   ├── best_model.json          
+│   └── *.csv                   
+├── reports/                    
 ├── requirements.txt
 └── README.md
 ```
@@ -63,19 +63,19 @@ pip install -r requirements.txt
 # 0. Placer df_prepared.parquet (sortie du notebook 01) dans data/processed/
 #    (le notebook 01 l'écrit dans son dossier courant : le déplacer dans data/processed/)
 
-# 1. Chapitre 7 : variables, split, déséquilibre -> train/val/test.parquet
+# 1. variables, split, déséquilibre -> train/val/test.parquet
 jupyter nbconvert --to notebook --execute notebooks/03_Preparation_ML.ipynb --inplace
 #    ou ouvrir le notebook dans JupyterLab et exécuter toutes les cellules
 
-# 2. Chapitre 8 : entraînement des trois modèles (depuis la racine du projet)
+# 2. entraînement des trois modèles (depuis la racine du projet)
 python scripts/train_logistic.py
 python scripts/train_random_forest.py
 python scripts/train_xgboost.py
 
-# 3. Chapitre 9 : évaluation, sélection du modèle -> outputs/best_model.json
+# 3. évaluation, sélection du modèle -> outputs/best_model.json
 jupyter nbconvert --to notebook --execute notebooks/04_Model_Evaluation.ipynb --inplace
 
-# 4. Chapitre 10 : interprétabilité SHAP du modèle retenu
+# 4. interprétabilité SHAP du modèle retenu
 jupyter nbconvert --to notebook --execute notebooks/05_Model_Interpretability.ipynb --inplace
 ```
 
@@ -100,4 +100,4 @@ Les notebooks doivent être exécutés **depuis le dossier `notebooks/`** (les c
 
 ## Étape suivante (Partie III)
 
-Application Streamlit (chapitre 11). Point d'attention : le modèle utilise plus de 200 variables, alors que l'interface ne demande que montant, produit et appareil ; les autres variables devront être complétées par des valeurs par défaut (médianes d'entraînement stockées avec `models/features.json`) ou un modèle réduit sera à envisager.
+Application Streamlit . Point d'attention : le modèle utilise plus de 200 variables, alors que l'interface ne demande que montant, produit et appareil ; les autres variables devront être complétées par des valeurs par défaut (médianes d'entraînement stockées avec `models/features.json`) ou un modèle réduit sera à envisager.
